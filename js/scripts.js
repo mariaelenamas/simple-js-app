@@ -1,15 +1,35 @@
-let pokemonList = [
-    {name: "Jigglypuff", height: "108", types: ["normal","fairy"]},
-    {name: "Pikachu", height: "104", types: ["eletric"]},
-    {name: "Charmeleon", height: "307", types: ["fire"]},
-];
+// pokemonList array wrapped in an IIFE
 
-for (let i=0; i< pokemonList.length; i++) {
-    if(pokemonList[i].height <110) {
-        document.write(pokemonList[i].name + " is a very tiny Pokémon!");
-    }else if(pokemonList[i].height >110 && pokemonList[i].height <300){
-        document.write(pokemonList[i].name + " is a medium-size Pokémon!");
-    }else{
-    document.write(pokemonList[i].name + " is a huge Pokémon!!");
+let pokemonRepository = (function () {
+
+    let pokemonList = [
+        {name: "Jigglypuff", height: "108", types: ["normal","fairy"]},
+        {name: "Pikachu", height: "104", types: ["eletric"]},
+        {name: "Charmeleon", height: "307", types: ["fire"]},
+    ];
+
+    function add(pokemon) {
+        pokemonList.push(pokemon);
     }
-}
+
+    function getAll() {
+        return pokemonList;
+    }
+
+    return {
+        add: add,
+        getAll: getAll
+    };
+
+})();
+
+    pokemonRepository.getAll().forEach(function(pokemon) {
+        if(pokemon.height <110) {
+            document.write(pokemon.name + " is a very tiny Pokémon!");
+        }else if(pokemon.height >110 && pokemon.height <300){
+            document.write(pokemon.name + " is a medium-size Pokémon!");
+        }else{
+        document.write(pokemon.name + " is a huge Pokémon!!");
+        }
+    })
+    
