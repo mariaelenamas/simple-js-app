@@ -25,11 +25,11 @@ let pokemonRepository = (function () {
 
     pokemonRepository.getAll().forEach(function(pokemon) {
         if(pokemon.height <110) {
-            document.write(pokemon.name + " is a very tiny Pokémon!");
+            document.write(pokemon.name + " is a very tiny Pokémon!<br>");
         }else if(pokemon.height >110 && pokemon.height <300){
-            document.write(pokemon.name + " is a medium-size Pokémon!");
+            document.write(pokemon.name + " is a medium-size Pokémon!<br>");
         }else{
-        document.write(pokemon.name + " is a huge Pokémon!!");
+        document.write(pokemon.name + " is a huge Pokémon!!<br>");
         }
     })
     
