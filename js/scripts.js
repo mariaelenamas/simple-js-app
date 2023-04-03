@@ -1,7 +1,6 @@
 // pokemonList array wrapped in an IIFE
 
 let pokemonRepository = (function () {
-
     let pokemonList = [
         {name: "Jigglypuff", height: "108", types: ["normal","fairy"]},
         {name: "Pikachu", height: "104", types: ["eletric"]},
@@ -16,21 +15,35 @@ let pokemonRepository = (function () {
         return pokemonList;
     }
 
-    // function showDetails (pokemon) {
-    //     console.log(pokemon.name)
-    // }
-
-    function addListItem(pokemon) {
-    let ul = document.querySelector('.pokemon-list'); 
-    let listItem = document.createElement('li'); 
-    let button = document.createElement('button');
-    button.innerText = pokemon.name;
-    button.classList.add("pokemonButton");
-    listItem.appendChild(button);
-    pokemonListItems.appendChild(listItem);
-
+    function showDetails(pokemon) {
+        console.log(pokemon.name)
     }
 
+    function addListItem(pokemon) {
+        let pokemonList = document.querySelector(".pokemon-list"); 
+        let listItem = document.createElement("li"); 
+        let button = document.createElement("button");
+        button.innerText = pokemon.name;
+        button.classList.add("pokemon-button");
+        listItem.appendChild(button);
+        pokemonList.appendChild(listItem);
+
+        button.addEventListener('click', function () {
+            showDetails(pokemon)
+    
+        });
+    
+    }
+
+    pokemonList.forEach(addListItem);
+
+    return {
+        add: add,
+        getAll: getAll,
+        addListItem: addListItem
+    };
+
+})();
 
     // pokemonRepository.getAll().forEach(function(pokemon) {
     //     if(pokemon.height <110) {
@@ -41,12 +54,3 @@ let pokemonRepository = (function () {
     //     document.write(pokemon.name + " is a huge Pokémon!!<br>");
     //     }
     // })
-    
-    pokemonList.forEach(addListItem);
-
-    return {
-        add: add,
-        getAll: getAll
-    };
-
-})();
