@@ -1,4 +1,48 @@
-.pokemonButton {
-    
+.pokemon-button { 
+    border:none;
+    background-color:yellow;
+    color:blue;
+    padding:15px;
+    text-align:center;
+    font-family:cursive;
+    font-size:20px;
+    text-decoration:none;
+    margin-top:10px;
+    margin-bottom:10px;
+
 }
 
+.pokemon-button: hover{ 
+
+}
+
+
+    /* 
+    border: none;
+    font-family: inherit;
+    background-color: #1b17f3;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 3px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+
+    margin: 
+    -webkit-transition-duration:
+    transition-duration:
+    cursor: 
+    background-color: 
+    color: 
+    border: 
+
+    display: 
+    
+    button:hover, button:focus {
+    cursor: pointer;
+    opacity: 0.8;
+    */
+
+
+.pokemon-list {
+
+}
