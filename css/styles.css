@@ -9,13 +9,19 @@
     text-decoration:none;
     margin-top:10px;
     margin-bottom:10px;
+    margin-right: 10px;
+    margin-left: 10px; /* check if it's better to leave only "margin:" */
 
 }
 
-.pokemon-button: hover{ 
-
+.pokemon-button:hover{ 
+    background-color: green;
+    color: white;
 }
 
+.pokemon-list {
+    list-style-type: none;
+}
 
     /* 
     border: none;
@@ -42,7 +48,3 @@
     opacity: 0.8;
     */
 
-
-.pokemon-list {
-
-}
