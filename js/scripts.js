@@ -35,7 +35,7 @@ let pokemonRepository = (function () {
     
     }
 
-    pokemonList.forEach(addListItem);
+   
 
     return {
         add: add,
@@ -45,12 +45,17 @@ let pokemonRepository = (function () {
 
 })();
 
-    // pokemonRepository.getAll().forEach(function(pokemon) {
-    //     if(pokemon.height <110) {
-    //         document.write(pokemon.name + " is a very tiny Pokémon!<br>");
-    //     }else if(pokemon.height >110 && pokemon.height <300){
-    //         document.write(pokemon.name + " is a medium-size Pokémon!<br>");
-    //     }else{
-    //     document.write(pokemon.name + " is a huge Pokémon!!<br>");
-    //     }
-    // })
+    pokemonRepository.getAll().forEach(function(pokemon) {
+        pokemonRepository.addListItem(pokemon);
+    })
+
+    // pokemonRepository.addListItem(pokemon);
+    //  if(pokemon.height <110) {
+    //     document.write(pokemon.name + " is a very tiny Pokémon!<br>");
+    //  }else if(pokemon.height >110 && pokemon.height <300){
+    //     document.write(pokemon.name + " is a medium-size Pokémon!<br>");
+    // }else{
+    // document.write(pokemon.name + " is a huge Pokémon!!<br>");
+    // }
+
+    // pokemonList.forEach(addListItem);
