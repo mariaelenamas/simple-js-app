@@ -13,9 +13,33 @@
     <h1>Pokédex</h1>
     <p>List of some Pokémons stats</p>
     <ul class="pokemon-list"></ul>
+    
+   
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-content-left">
+          <img src="https://source.unsplash.com/5d5DSRQ5dUc" alt="unsplash daily picture" id="modalImg">
+        </div>
+    
+        <div class="modal-content-right">
+        
+          <div class="modal-header">
+            <p id="modalTitle"></p>
+            <span class="close">&times;</span>
+          </div>
+    
+          <div class="modal-body" id="modalTxt"></div>
+    
+        </div>
+      </div>
+    </div>
+    
+
+
       <script src="js/promise-polyfill.js"></script>
       <script src="js/fetch-polyfill.js"></script>
       <script src="js/scripts.js"></script>
+
   </body>
 
 </html>

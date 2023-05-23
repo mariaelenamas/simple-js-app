@@ -20,9 +20,13 @@ let pokemonRepository = (function () {
     }
 
     function showDetails(pokemon) {
+        loadDetails(pokemon).then(function () {
+        showModal(pokemon)
         console.log(pokemon.name)
+        });
     }
 
+    // every pokemon button on the list 
     function addListItem(pokemon) {
         let pokemonList = document.querySelector(".pokemon-list"); 
         let listItem = document.createElement("li"); 
@@ -38,6 +42,7 @@ let pokemonRepository = (function () {
     }
 
     function loadList() {
+        showLoadingMessage()
         return fetch(apiUrl).then(function (response) {
             return response.json();
         }).then(function (json) {
@@ -47,13 +52,19 @@ let pokemonRepository = (function () {
                 detailsUrl: item.url
             };
             add(pokemon);
-            console.log(pokemon);
+            // console.log(pokemon);
             });
         }).catch(function (e) {
             console.error(e);
         })
     }
 
+    function showLoadingMessage(){
+
+        //replcae with any loading animation 
+        alert('loading....')
+     }
+    // update the pokemon with details from URL 
     function loadDetails(item) {
         let url = item.detailsUrl;
         return fetch(url).then(function (response) {
@@ -67,12 +78,38 @@ let pokemonRepository = (function () {
             console.error(e);
         });
     }
-      
-    function showDetails(item) {
-        pokemonRepository.loadDetails(item).then(function () {
-            console.log(item);
-        });
+    let closeModal = document.getElementsByClassName("close")[0];
+    let modal = document.getElementById("myModal");
+
+    // function to call the modal 
+    function showModal(pokemon){
+        // Get the <span> element that closes the modal
+        //console.log(pokemon)
+            modal.style.display = "block";
+         let img = document.getElementById('modalImg')
+         img.src = pokemon.imageUrl
+         let title = document.getElementById('modalTitle')
+         title.innerText = pokemon.name
+
+         let details = document.getElementById('modalTxt')
+         details.innerText = 'types :' + pokemon.types.map(x=>x.type.name) + ' Height :  ' + pokemon.height
     }
+
+
+// When the user clicks on <span> (x), close the modal
+closeModal.onclick = function () {
+  modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+// End modal JS
+
 
 
     return {
@@ -81,7 +118,7 @@ let pokemonRepository = (function () {
         addListItem: addListItem,
         loadList: loadList,
         loadDetails: loadDetails,
-        showDetails: showDetails
+        showDetails: showDetails,
     };
 
 })();
@@ -94,9 +131,9 @@ let pokemonRepository = (function () {
 });
 
     // pokemonRepository.addListItem(pokemon);
-    //  if(pokemon.height <110) {
+    // if(pokemon.height <110) {
     //     document.write(pokemon.name + " is a very tiny Pokémon!<br>");
-    //  }else if(pokemon.height >110 && pokemon.height <300){
+    // }else if(pokemon.height >110 && pokemon.height <300){
     //     document.write(pokemon.name + " is a medium-size Pokémon!<br>");
     // }else{
     // document.write(pokemon.name + " is a huge Pokémon!!<br>");
