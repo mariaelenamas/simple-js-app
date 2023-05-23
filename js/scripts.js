@@ -1,5 +1,4 @@
 // pokemonList array wrapped in an IIFE
-
 let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
@@ -60,9 +59,8 @@ let pokemonRepository = (function () {
     }
 
     function showLoadingMessage(){
-
-        //replcae with any loading animation 
-        alert('loading....')
+        // replace with any loading animation 
+        alert('Loading...')
      }
     // update the pokemon with details from URL 
     function loadDetails(item) {
@@ -83,33 +81,26 @@ let pokemonRepository = (function () {
 
     // function to call the modal 
     function showModal(pokemon){
-        // Get the <span> element that closes the modal
-        //console.log(pokemon)
-            modal.style.display = "block";
-         let img = document.getElementById('modalImg')
-         img.src = pokemon.imageUrl
-         let title = document.getElementById('modalTitle')
-         title.innerText = pokemon.name
-
-         let details = document.getElementById('modalTxt')
-         details.innerText = 'types :' + pokemon.types.map(x=>x.type.name) + ' Height :  ' + pokemon.height
+    //console.log(pokemon)
+    modal.style.display = "block";
+    let img = document.getElementById('modalImg')
+    img.src = pokemon.imageUrl
+    let title = document.getElementById('modalTitle')
+    title.innerText = pokemon.name
+    let details = document.getElementById('modalTxt')
+    details.innerText = 'types :' + pokemon.types.map(x=>x.type.name) + ' Height :  ' + pokemon.height
     }
 
-
-// When the user clicks on <span> (x), close the modal
-closeModal.onclick = function () {
-  modal.style.display = "none";
-};
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == modal) {
+    closeModal.onclick = function () {
     modal.style.display = "none";
-  }
-};
+    };
 
-// End modal JS
-
+    // when the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+        }
+    };
 
 
     return {
