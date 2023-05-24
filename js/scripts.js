@@ -88,7 +88,7 @@ let pokemonRepository = (function () {
     let title = document.getElementById('modalTitle')
     title.innerText = pokemon.name
     let details = document.getElementById('modalTxt')
-    details.innerText = 'types :' + pokemon.types.map(x=>x.type.name) + ' Height :  ' + pokemon.height
+    details.innerText = 'Types: ' + pokemon.types.map(x=>x.type.name) + '\n Height: ' + pokemon.height
     }
 
     closeModal.onclick = function () {
