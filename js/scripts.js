@@ -58,10 +58,11 @@ let pokemonRepository = (function () {
         })
     }
 
-    function showLoadingMessage(){
+    function showLoadingMessage(){ 
         // replace with any loading animation 
         alert('Loading...')
-     }
+    }
+
     // update the pokemon with details from URL 
     function loadDetails(item) {
         let url = item.detailsUrl;

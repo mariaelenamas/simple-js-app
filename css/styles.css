@@ -1,129 +1,140 @@
-.pokemon-button { 
-    border:none;
-    background-color:yellow;
-    color:blue;
-    padding:15px;
-    text-align:center;
-    font-family:cursive;
-    font-size:20px;
-    text-decoration:none;
-    margin-top:10px;
-    margin-bottom:10px;
-    margin-right: 10px;
-    margin-left: 10px; /* check if it's better to leave only "margin:" */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+body {
+  background-color: #ff0f0f;
+  color:darkblue;
+  margin-left: 50px;
+}
+
+h1 {
+  font-family: 'Poppins';
+  font-size: 60px;
+  color: white;
+  line-height: 10%;
+  text-shadow: -5px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue;
+  padding-top: 30px;
+}
+
+.pokemon-button { 
+  border:none;
+  background-color:yellow;
+  color:darkblue;
+  padding:15px;
+  text-align:center;
+  font-family: "Patua One", cursive;
+  font-size:20px;
+  text-transform: capitalize;
+  text-decoration:none;
+  margin-top:10px;
+  margin-bottom:10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border: 3px solid darkblue;
+  border-radius: 13px;
 }
 
 .pokemon-button:hover{ 
-    background-color: green;
-    color: white;
+  background-color: darkblue;
+  color: whitesmoke;
+  border:3px solid darkblue;
 }
 
 .pokemon-list {
-    list-style-type: none;
+  list-style-type: none;
 }
 
-    /* 
-    border: none;
-    font-family: inherit;
-    background-color: #1b17f3;
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 3px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-
-    margin: 
-    -webkit-transition-duration:
-    transition-duration:
-    cursor: 
-    background-color: 
-    color: 
-    border: 
-
-    display: 
-    
-    button:hover, button:focus {
-    cursor: pointer;
-    opacity: 0.8;
-    */
-
-    
-
-/* The Modal (background) */
-
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
-  }
-  
-  /* Modal Content */
-  .modal-content {
-    position: static;
-    margin: auto;
-    padding: 10px;
-    width: 95%;
-    max-width: 60rem;
-    max-height: 33rem;
-    overflow: hidden;
-    font-family: "Open Sans", sans-serif;
-    background: #fff;
-    display: flex;
-  }
-  
-  .modal-content-left img {
-    width: 40rem;
-    max-width: 100%;
-    margin: 30px;
-    padding: 0;
-    display: block;
-  }
-  
-  .modal-content-right {
-    flex: 3;
-    max-width: 100%;
-    padding: 1rem 3rem;
-  }
+  display: none; 
+  position: fixed;
+  z-index: 1;
+  padding-top: 200px;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.2);
+}
 
-  .modal-content-left {
-    flex: 1;
+#modalp {
+  font-family: "Patua One", cursive;
+  font-size: 40px;
+  color:darkblue;
+}
+
+#modalTitle {
+  font-family: "Patua One", cursive;
+  font-size: 40px;
+  color:darkblue;
+  position: relative;
+	width: 95%;
+  height: 50px;
+  text-align: center;
+}
+
+.modal-header {
+  display: flex;
+  font-family: "Patua One", cursive;
+  text-decoration: blue;
+  font-size: 3.5rem;
+  position: relative;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+
+.modal-body {
+  /* font-family: "Patua One", cursive;
+  font-size: 40px; */
+  text-align: center;
+}
+  
+.modal-content {
+  position: relative;
+  margin: auto;
+  padding: 0; /* era 20px */
+  width: 40rem;
+  overflow: hidden;
+  font-family: "Patua One", cursive;
+  font-size: 20px;
+  background: rgb(253, 253, 1);
+  display: flex;
+  align-items: center; /* tolti*/
+  justify-content: space-between; /* tolti*/
+  border: 3px solid darkblue;
+  border-radius: 20px;
+}
+
+.modal-content img {
+  position: relative;
+
+  right: 0px;
+  bottom: 0px;
+ 
+  max-width: 95%;
+  margin: auto;
+  padding: 0; 
+  width: 15rem;
+  /* transform: translate(20px, 170px); */
+  display: block;
+}
+
+.modal-content-right { /* too high*/
+  flex: 1;
+  max-width: 100%;
+  padding: 1rem 3rem;
+}
+
+.close {
+  position: relative;
+  color: #aaa;
+  font-family: "Patua One", cursive;
+  font-size: 4rem;
+  transition: 0.4s ease-out;
   }
   
-  /* The Close Button */
-  .close {
-    color: #aaa;
-    font-size: 3rem;
-    font-weight: bold;
-    padding: 0;
-    transition: 0.4s ease-out;
-    height: 100px;
-  }
-  
-  .close:hover {
-    color: #111;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .modal-header {
-    display: flex;
-    justify-content: space-between;
-    font-family: "Patua One", cursive;
-    font-size: 3rem;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .modal-header p {
-    margin: 0;
-    padding: 0;
-  }
+.close:hover {
+  color: darkblue;
+  text-decoration: none;
+  cursor: pointer;
+}
