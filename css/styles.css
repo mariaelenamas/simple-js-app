@@ -33,7 +33,7 @@ h1 {
   border-radius: 13px;
 }
 
-.pokemon-button:hover{ 
+.pokemon-button:hover { 
   background-color: darkblue;
   color: whitesmoke;
   border:3px solid darkblue;
@@ -68,7 +68,10 @@ h1 {
   font-size: 40px;
   color:darkblue;
   position: relative;
-	width: 95%;
+  bottom: -40px;
+  left: 20px;
+  box-sizing: border-box;
+	width: 90%;
   height: 50px;
   text-align: center;
 }
@@ -79,59 +82,62 @@ h1 {
   text-decoration: blue;
   font-size: 3.5rem;
   position: relative;
-  justify-content: space-between;
+  height: 150px;
+  justify-content: center;
   text-transform: capitalize;
 }
 
 .modal-body {
-  /* font-family: "Patua One", cursive;
-  font-size: 40px; */
+  display: flex;
+  position: relative;
+  margin: 25px 70px;
+  justify-content: center;
   text-align: center;
 }
   
 .modal-content {
   position: relative;
   margin: auto;
-  padding: 0; /* era 20px */
-  width: 40rem;
+  padding: 0; 
+  width: 30rem;
   overflow: hidden;
   font-family: "Patua One", cursive;
   font-size: 20px;
   background: rgb(253, 253, 1);
   display: flex;
-  align-items: center; /* tolti*/
-  justify-content: space-between; /* tolti*/
+  align-items: center; 
+  justify-content: space-between;
   border: 3px solid darkblue;
   border-radius: 20px;
 }
 
 .modal-content img {
   position: relative;
-
+  box-sizing: border-box;
   right: 0px;
   bottom: 0px;
- 
   max-width: 95%;
   margin: auto;
   padding: 0; 
   width: 15rem;
-  /* transform: translate(20px, 170px); */
   display: block;
 }
 
-.modal-content-right { /* too high*/
+.modal-content-right {
   flex: 1;
   max-width: 100%;
-  padding: 1rem 3rem;
+  padding: 1rem 1rem;
 }
 
 .close {
   position: relative;
+  bottom: 27px;
+  box-sizing: border-box;
   color: #aaa;
   font-family: "Patua One", cursive;
   font-size: 4rem;
   transition: 0.4s ease-out;
-  }
+}
   
 .close:hover {
   color: darkblue;

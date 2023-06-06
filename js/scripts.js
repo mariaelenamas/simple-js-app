@@ -58,7 +58,7 @@ let pokemonRepository = (function () {
         })
     }
 
-    function showLoadingMessage(){ 
+    function showLoadingMessage() { 
         // replace with any loading animation 
         alert('Loading...')
     }
@@ -81,7 +81,7 @@ let pokemonRepository = (function () {
     let modal = document.getElementById("myModal");
 
     // function to call the modal 
-    function showModal(pokemon){
+    function showModal(pokemon) {
     //console.log(pokemon)
     modal.style.display = "block";
     let img = document.getElementById('modalImg')
