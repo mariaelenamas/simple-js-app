@@ -59,8 +59,9 @@ let pokemonRepository = (function () {
     }
 
     function showLoadingMessage() { 
-        // replace with any loading animation 
-        alert('Loading...')
+        let loaderContainer = document.querySelector('.loadingimage');  
+        window.addEventListener('load', () => {
+        });
     }
 
     // update the pokemon with details from URL 
