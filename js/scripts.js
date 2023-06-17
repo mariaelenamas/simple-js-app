@@ -41,7 +41,7 @@ let pokemonRepository = (function () {
     }
 
     function loadList() {
-        showLoadingMessage()
+        setTimeout(showLoadingMessage, 5000);
         return fetch(apiUrl).then(function (response) {
             return response.json();
         }).then(function (json) {
@@ -63,6 +63,7 @@ let pokemonRepository = (function () {
         window.addEventListener('load', () => {
         });
     }
+        
 
     // update the pokemon with details from URL 
     function loadDetails(item) {
